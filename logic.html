@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="scalar.css" />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    crossorigin=""
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"
+  />
+</head>
+<body>
+  <div id="map"></div>
+  <div class="controls-overlay">
+    <div class="filters">
+      <!-- Filter Form -->
+      <!-- Removed filters for simplicity -->
+    </div>
+    <!-- Add Tree Button -->
+    <button
+      type="button"
+      class="btn btn-primary add-tree-button"
+      data-toggle="modal"
+      data-target="#addTreeModal"
+    >
+      Add Tree
+    </button>
+
+    <!-- Add Tree Form -->
+    <div id="addTreeModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addTreeModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addTreeModalLabel">Add Tree</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="#" method="post">
+              <div class="form-group">
+                <label for="tree-name">Tree Name</label>
+                <input type="text" id="tree-name" name="tree-name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="tree-age">Age</label>
+                <input type="number" id="tree-age" name="tree-age" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="tree-height">Height</label>
+                <input type="number" id="tree-height" name="tree-height" class="form-control" required>
+              </div>
+              <button type="submit" id="submitTreeButton" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Tree Form -->
+    <div class="form-container">
+      <form id="deleteTreeForm" action="#" method="post">
+        <label for="tree-name-delete">Tree Name</label>
+        <input type="text" id="tree-name-delete" name="tree-name-delete" required>
+
+        <div class="option-container">
+          <h3>Fully Uproot</h3>
+          <div class="vote-buttons">
+            <button type="button" class="upvote">Upvote</button>
+            <button type="button" class="downvote">Downvote</button>
+          </div>
+          <input type="submit" value="Submit Fully Uproot">
+        </div>
+
+        <div class="option-container">
+          <h3>Half Uproot</h3>
+          <div class="vote-buttons">
+            <button type="button" class="upvote">Upvote</button>
+            <button type="button" class="downvote">Downvote</button>
+          </div>
+          <input type="submit" value="Submit Half Uproot">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="jecks.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+</body>
+</html>
